@@ -21,11 +21,11 @@ Function Run-MySQLCustom{
     By Default this section will use the test dabase and run an user generated MySQL Query
     
 .EXAMPLE
-    C:\PS> select * from domain_current where server = 'linweb01' order by spaceused desc limit 10;
+    C:\PS> select * from domain_current where server = 'web01' order by spaceused desc limit 10;
 #>
     $myQuery = Read-Host "Enter Custom Query "
 
-    run-MySQLQuery -ConnectionString "server=$dbServer;Uid=$userName;Pwd=$plainpassword;database=$dbname;" -Query "$myquery"
+    run-MySQLQuery -ConnectionString "server=$mysqlserver;Uid=$userName;Pwd=$plainpassword;database=$dbname;" -Query "$myquery"
 
     Pause
 }
